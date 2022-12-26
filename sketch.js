@@ -29,6 +29,8 @@ function setup() {
   allow_mouse_slider = createSlider(0, 1, 0);
   allow_mouse_slider.position(320, 20);
   allow_mouse_slider.style('width', '30px');
+  point_weight_slider = createSlider(1, 10, 1);
+  point_weight_slider.position(370, 20);
   
   createCanvas(windowWidth, windowHeight, WEBGL); 
   pixelDensity(1);
@@ -53,11 +55,13 @@ function draw() {
   number_droplets_per_freq = number_droplets_slider.value();
   random_color = random_color_slider.value();
   allow_mouse = allow_mouse_slider.value();
+  strokeWeight(point_weight_slider.value());
 
   // add ripple at mouse
   random_color ? stroke(random(256), random(256), random(256)) : stroke(ripple_color);
   if(allow_mouse && mouseIsPressed) {
     point(mouseX - width/2, mouseY - height/2);
+    // rect(mouseX - width/2, mouseY - height/2, 50, 50);
   }
   
   // add rain drop
