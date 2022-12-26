@@ -30,7 +30,7 @@ function setup() {
   allow_mouse_slider.position(320, 20);
   allow_mouse_slider.style('width', '30px');
   
-  createCanvas(displayWidth, displayHeight, WEBGL); 
+  createCanvas(windowWidth, windowHeight, WEBGL); 
   pixelDensity(1);
   noSmooth();
   // create buffers
